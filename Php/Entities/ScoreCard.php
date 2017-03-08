@@ -43,6 +43,11 @@ class ScoreCard extends AbstractEntity
         $this->attr('score')->integer()->setToArrayDefault();
         $this->attr('activities')->integer()->setToArrayDefault();
         $this->attr('lastActivity')->datetime()->setToArrayDefault();
+        
+        $this->api('GET', 'user/{user}', function(User $user){
+            $scoreCard = $this->find(['user'=>$user->id], ['-score']);
+            return $scoreCard->toArray('user.firstName,user.lastName,rule.name,rule.description,score,activities,lastActivity');
+        });
     }
 
     /**
