@@ -46,7 +46,7 @@ class ScoreCard extends AbstractEntity
         
         $this->api('GET', 'user/{user}', function(User $user){
             $scoreCard = $this->find(['user'=>$user->id], ['-score']);
-            return $scoreCard->toArray('user.firstName,user.lastName,rule.name,rule.description,score,activities,lastActivity');
+            return $scoreCard->toArray('user.firstName,user.lastName,user.sauron,rule.name,rule.description,score,activities,lastActivity');
         });
     }
 

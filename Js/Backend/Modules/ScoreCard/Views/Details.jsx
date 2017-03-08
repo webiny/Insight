@@ -26,6 +26,7 @@ Details.defaultProps = {
                             <Ui.Link type="default" align="right" route="Sauron.ScoreCard.List">Back</Ui.Link>
                         </Ui.View.Header>
                         <Ui.View.Body>
+                            <h2>Level: {data[0].user.sauron.level} / Total score: {data[0].user.sauron.score}</h2>
                             <Table data={data}>
                                 <Table.Row>
                                     <Table.Field name="score" align="left" label="Score" sort="score" align="center">
