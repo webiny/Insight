@@ -5,7 +5,7 @@ Simple use-case would be, assign a score of “1” for every time a user opens 
 
 Users with higher score are your power users that actively engage with your website or a product.
 
-The app works only if use use Webiny platform and the User’s entity provided with the platform. It’s fine if you have extended the entity with your own, it should still work.
+The app works only if use use Webiny platform and the User entity provided with the platform. It’s fine if you have extended the entity with your own, it should still work.
 
 Sauron has 3 main concepts:
 * Rules
@@ -21,13 +21,13 @@ For each time a user performs this action, the defined score amount will be assi
 This is your core view, it shows you all your registered users ranked by their level.
 
 The level is based on the power of 2.  i.e.
-Say level 3, that equals to 2^3, which equals to 8, and since previous level equals to 4 (2^2), the range for level 3 is score of 5 - 8.
-Level 4 (2^4): 9 - 16
-Level 5 (2^5): 17 - 32
-Level 6 (2^6): 33 - 64
+Say level 3, that equals to 2^3, which equals to score of 8, and since previous level equals to score of 4 (2^2), the range for level 3 is score of 5 - 8.
+* Level 4 (2^4): 9 - 16
+* Level 5 (2^5): 17 - 32
+* Level 6 (2^6): 33 - 64
 …you get the point
 
-Score card shows you the total user score, as well as a breakdown of which actions he performed, how many times, what is the last time he performed that action and the total score for that action.
+Score card shows you the total user score, as well as a breakdown of which actions he performed, how many times, when was the last time he performed that action and the total score for that action.
 
 ## Tracker
 Every rule has a slug, using that slug you need to call the tracker in your app, once the action has been performed. Tracker is a client side JS class which has to be declared as a dependency to your Webiny app.
@@ -38,8 +38,8 @@ Every rule has a slug, using that slug you need to call the tracker in your app,
 Inside your app template add it to the app list in the header:
 ```html
 <script type="text/javascript">
-        var Webiny = {apps: ['Your.App', 'Sauron.Shared'], router: {baseUrl: '/', title: '%s | Webiny'}};
-    </script>
+    var Webiny = {apps: ['Your.App', 'Sauron.Shared'], router: {baseUrl: '/', title: '%s | Webiny'}};
+</script>
 ```
 
 As well as inside the body:
