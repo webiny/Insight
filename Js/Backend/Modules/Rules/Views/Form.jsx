@@ -11,7 +11,7 @@ class Form extends Webiny.Ui.View {
 Form.defaultProps = {
     renderer() {
         const formProps = {
-            api: '/entities/sauron/rule',
+            api: '/entities/sauron/rules',
             fields: '*',
             connectToRouter: true,
             onSubmitSuccess: 'Sauron.Rule.List',

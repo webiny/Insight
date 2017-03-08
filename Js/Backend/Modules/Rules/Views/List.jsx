@@ -12,7 +12,7 @@ List.defaultProps = {
 
     renderer() {
         const listProps = {
-            api: '/entities/sauron/rule',
+            api: '/entities/sauron/rules',
             fields: '*',
             searchFields: 'name',
             connectToRouter: true

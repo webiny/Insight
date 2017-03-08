@@ -12,7 +12,7 @@ class Details extends Webiny.Ui.View {
 Details.defaultProps = {
     renderer() {
         const listProps = {
-            api: '/entities/sauron/score-card',
+            api: '/entities/sauron/score-cards',
             url: '/user/' + Webiny.Router.getParams('id')
         };
 
