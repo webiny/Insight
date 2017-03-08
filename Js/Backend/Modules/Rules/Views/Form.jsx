@@ -1,14 +1,14 @@
 import Webiny from 'Webiny';
 const Ui = Webiny.Ui.Components;
 
-class RuleForm extends Webiny.Ui.View {
+class Form extends Webiny.Ui.View {
 
     constructor(props) {
         super(props);
     }
 }
 
-RuleForm.defaultProps = {
+Form.defaultProps = {
     renderer() {
         const formProps = {
             api: '/entities/sauron/rule',
@@ -52,4 +52,4 @@ RuleForm.defaultProps = {
 };
 
 
-export default RuleForm;
+export default Form;

@@ -2,13 +2,13 @@ import Webiny from 'Webiny';
 const Ui = Webiny.Ui.Components;
 const Table = Ui.List.Table;
 
-class RuleList extends Webiny.Ui.View {
+class List extends Webiny.Ui.View {
     constructor(props) {
         super(props);
     }
 }
 
-RuleList.defaultProps = {
+List.defaultProps = {
 
     renderer() {
         const listProps = {
@@ -73,4 +73,4 @@ RuleList.defaultProps = {
     }
 };
 
-export default RuleList;
+export default List;
