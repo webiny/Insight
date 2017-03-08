@@ -1,11 +1,13 @@
 import Webiny from 'Webiny';
-import Main from './Modules/Main';
+import Rules from './Modules/Rules';
+import ScoreCard from './Modules/ScoreCard';
 
 class SauronBackend extends Webiny.App {
     constructor() {
         super('Sauron.Backend');
         this.modules = [
-            new Main(this)
+            new Rules(this),
+            new ScoreCard(this)
         ];
 
         this.beforeRender(() => {
