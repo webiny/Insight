@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Sauron",
+        "slug": "sauron",
+        "description": "This role allows user to manage Sauron rules and view score cards.",
+        "permissions": [
+            "sauron-manage-all"
+        ]
+    }
+]
