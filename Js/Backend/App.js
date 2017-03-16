@@ -14,8 +14,6 @@ class SauronBackend extends Webiny.App {
             return Webiny.includeApp('Sauron.Shared').then(app => app.run());
         });
     }
-
-
 }
 
 Webiny.registerApp(new SauronBackend());
