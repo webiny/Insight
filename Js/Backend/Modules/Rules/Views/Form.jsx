@@ -28,7 +28,7 @@ Form.defaultProps = {
                             <Ui.Grid.Row>
                                 <Ui.Grid.Col all={12}>
 
-                                    <Ui.Form.Fieldset title="Rule"/>
+                                    <Ui.Form.Section title="Rule"/>
 
                                     <Ui.Input label="Name" name="name" validate="required"/>
                                     <Ui.Input label="Slug" name="slug" validate="required"/>
