@@ -20,7 +20,7 @@ List.defaultProps = {
         };
 
         return (
-            <Webiny.Ui.LazyLoad modules={['View', 'Link', 'Icon', 'List', 'Input']}>
+            <Webiny.Ui.LazyLoad modules={['View', 'Grid', 'Link', 'Icon', 'List', 'Input']}>
                 {(Ui) => (
                     <Ui.View.List>
                         <Ui.View.Header title="Rules">

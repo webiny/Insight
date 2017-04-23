@@ -5,8 +5,7 @@ class List extends Webiny.Ui.View {
 }
 
 List.defaultProps = {
-
-    renderer: function render() {
+    renderer() {
         const listProps = {
             api: '/entities/core/users',
             fields: 'id,enabled,firstName,lastName,email,createdOn,gravatar,sauron',
@@ -36,7 +35,11 @@ List.defaultProps = {
                                 <Ui.List.Table>
                                     <Ui.List.Table.Row>
                                         <Ui.List.Table.GravatarField name="gravatar"/>
-                                        <Ui.List.Table.Field name="firstName" label="First Name" sort="firstName" route="Sauron.ScoreCard.Details">
+                                        <Ui.List.Table.Field
+                                            name="firstName"
+                                            label="First Name"
+                                            sort="firstName"
+                                            route="Sauron.ScoreCard.Details">
                                             {data => (
                                                 <span>
                                                     <strong>{data.firstName} {data.lastName}</strong>
