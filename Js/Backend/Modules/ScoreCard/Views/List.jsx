@@ -1,6 +1,4 @@
 import Webiny from 'Webiny';
-const Ui = Webiny.Ui.Components;
-const Table = Ui.List.Table;
 
 class List extends Webiny.Ui.View {
 
@@ -19,45 +17,49 @@ List.defaultProps = {
 
 
         return (
-            <Ui.View.List>
-                <Ui.View.Header
-                    title="Score Card"
-                    description="Overview of user ranks based on their Sauron score."/>
-                <Ui.View.Body>
-                    <Ui.List {...listProps}>
-                        <Ui.List.FormFilters>
-                            {(applyFilters) => (
-                                <Ui.Input
-                                    name="_searchQuery"
-                                    placeholder="Search by name or email"
-                                    onEnter={applyFilters()}/>
-                            )}
-                        </Ui.List.FormFilters>
-                        <Table>
-                            <Table.Row>
-                                <Table.GravatarField name="gravatar"/>
-                                <Table.Field name="firstName" label="First Name" sort="firstName" route="Sauron.ScoreCard.Details">
-                                    {data => (
-                                        <span>
-                                            <strong>{data.firstName} {data.lastName}</strong>
-                                            <br/>Level: {_.get(data.sauron, 'level', 1)}
-                                        </span>
+            <Webiny.Ui.LazyLoad modules={['View', 'List', 'Input']}>
+                {(Ui) => (
+                    <Ui.View.List>
+                        <Ui.View.Header
+                            title="Score Card"
+                            description="Overview of user ranks based on their Sauron score."/>
+                        <Ui.View.Body>
+                            <Ui.List {...listProps}>
+                                <Ui.List.FormFilters>
+                                    {(applyFilters) => (
+                                        <Ui.Input
+                                            name="_searchQuery"
+                                            placeholder="Search by name or email"
+                                            onEnter={applyFilters()}/>
                                     )}
-                                </Table.Field>
-                                <Table.Field name="email" sort="email" label="Email"/>
-                                <Table.Field name="sauron.score" sort="score" label="Score" align="center"/>
+                                </Ui.List.FormFilters>
+                                <Ui.List.Table>
+                                    <Ui.List.Table.Row>
+                                        <Ui.List.Table.GravatarField name="gravatar"/>
+                                        <Ui.List.Table.Field name="firstName" label="First Name" sort="firstName" route="Sauron.ScoreCard.Details">
+                                            {data => (
+                                                <span>
+                                                    <strong>{data.firstName} {data.lastName}</strong>
+                                                    <br/>Level: {_.get(data.sauron, 'level', 1)}
+                                                </span>
+                                            )}
+                                        </Ui.List.Table.Field>
+                                        <Ui.List.Table.Field name="email" sort="email" label="Email"/>
+                                        <Ui.List.Table.Field name="sauron.score" sort="score" label="Score" align="center"/>
 
-                                <Table.Actions>
-                                    <Table.EditAction route="Sauron.ScoreCard.Details"/>
-                                    <Table.DeleteAction/>
-                                </Table.Actions>
-                            </Table.Row>
-                            <Table.Footer/>
-                        </Table>
-                        <Ui.List.Pagination/>
-                    </Ui.List>
-                </Ui.View.Body>
-            </Ui.View.List>
+                                        <Ui.List.Table.Actions>
+                                            <Ui.List.Table.EditAction route="Sauron.ScoreCard.Details"/>
+                                            <Ui.List.Table.DeleteAction/>
+                                        </Ui.List.Table.Actions>
+                                    </Ui.List.Table.Row>
+                                    <Ui.List.Table.Footer/>
+                                </Ui.List.Table>
+                                <Ui.List.Pagination/>
+                            </Ui.List>
+                        </Ui.View.Body>
+                    </Ui.View.List>
+                )}
+            </Webiny.Ui.LazyLoad>
         );
     }
 };
