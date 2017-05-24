@@ -1,8 +1,8 @@
 <?php
 namespace Apps\Sauron\Php\Entities;
 
-use Apps\Core\Php\DevTools\Entity\AbstractEntity;
-use Apps\Core\Php\DevTools\WebinyTrait;
+use Apps\Webiny\Php\DevTools\Entity\AbstractEntity;
+use Apps\Webiny\Php\DevTools\WebinyTrait;
 use Webiny\Component\Mongo\Index\SingleIndex;
 
 /**

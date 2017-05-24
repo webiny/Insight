@@ -2,7 +2,7 @@
 
 namespace Apps\Sauron\Php\Services;
 
-use Apps\Core\Php\DevTools\Services\AbstractService;
+use Apps\Webiny\Php\DevTools\Services\AbstractService;
 use Apps\Sauron\Php\Entities\Rule;
 use Apps\Sauron\Php\Entities\ScoreCard;
 

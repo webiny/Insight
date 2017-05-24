@@ -1,9 +1,9 @@
 <?php
 namespace Apps\Sauron\Php\Entities;
 
-use Apps\Core\Php\DevTools\Entity\AbstractEntity;
-use Apps\Core\Php\DevTools\WebinyTrait;
-use Apps\Core\Php\Entities\User;
+use Apps\Webiny\Php\DevTools\Entity\AbstractEntity;
+use Apps\Webiny\Php\DevTools\WebinyTrait;
+use Apps\Webiny\Php\Entities\User;
 use Webiny\Component\Mongo\Index\CompoundIndex;
 use Webiny\Component\Mongo\Index\SingleIndex;
 
@@ -34,7 +34,7 @@ class ScoreCard extends AbstractEntity
         $this->index(new SingleIndex('rule', 'rule'));
         $this->index(new CompoundIndex('user-rule', ['user', 'rule'], false, true));
 
-        $user = '\Apps\Core\Php\Entities\User';
+        $user = '\Apps\Webiny\Php\Entities\User';
         $this->attr('user')->many2one()->setEntity($user);
 
         $rule = '\Apps\Sauron\Php\Entities\Rule';
