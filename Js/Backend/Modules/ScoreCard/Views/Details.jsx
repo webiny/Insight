@@ -12,7 +12,7 @@ Details.defaultProps = {
         };
 
         return (
-            <Webiny.Ui.LazyLoad modules={['Data', 'View', 'Link', 'List']}>
+            <Webiny.Ui.LazyLoad modules={['Data', 'View', 'Link', 'List', 'Filters']}>
                 {(Ui) => (
                     <Ui.Data ui="stats" {...listProps}>
                         {data => {
