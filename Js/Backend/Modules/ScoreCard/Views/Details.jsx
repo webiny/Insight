@@ -14,7 +14,7 @@ Details.defaultProps = {
         return (
             <Webiny.Ui.LazyLoad modules={['Data', 'View', 'Link', 'List', 'Filters']}>
                 {(Ui) => (
-                    <Ui.Data ui="stats" {...listProps}>
+                    <Ui.Data {...listProps}>
                         {data => {
                             if(!data.length) {
                                 return <Ui.List.Table.Empty/>
