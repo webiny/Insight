@@ -2,7 +2,7 @@ import Webiny from 'Webiny';
 import List from './Views/List';
 import Details from './Views/Details';
 
-class ScoreCard extends Webiny.Module {
+class ScoreCard extends Webiny.App.Module {
 
     init() {
         this.name = 'Rules';

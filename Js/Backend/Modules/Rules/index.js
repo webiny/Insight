@@ -2,7 +2,7 @@ import Webiny from 'Webiny';
 import List from './Views/List';
 import Form from './Views/Form';
 
-class Rules extends Webiny.Module {
+class Rules extends Webiny.App.Module {
 
     init() {
         this.name = 'Rules';

@@ -1,7 +1,7 @@
 import Webiny from 'Webiny';
 import Eye from './Eye';
 
-class Module extends Webiny.Module {
+class Module extends Webiny.App.Module {
 
     init() {
         this.name = 'Sauron';
