@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import Webiny from 'Webiny';
+import Webiny from 'webiny';
 
 class Eye extends Webiny.Ui.Component {
     glance(rule) {

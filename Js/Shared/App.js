@@ -1,4 +1,4 @@
-import Webiny from 'Webiny';
+import Webiny from 'webiny';
 import Plugins from './Modules/Plugins';
 
 class SauronShared extends Webiny.App {

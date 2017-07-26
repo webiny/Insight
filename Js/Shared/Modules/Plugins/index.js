@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import Webiny from 'Webiny';
+import Webiny from 'webiny';
 import Eye from './Eye';
 
 class Module extends Webiny.App.Module {

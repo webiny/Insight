@@ -1,4 +1,4 @@
-import Webiny from 'Webiny';
+import Webiny from 'webiny';
 import Rules from './Modules/Rules';
 import ScoreCard from './Modules/ScoreCard';
 
