@@ -1,3 +1,4 @@
+import React from 'react';
 import Webiny from 'webiny';
 import List from './Views/List';
 import Form from './Views/Form';
@@ -10,11 +11,11 @@ class Rules extends Webiny.App.Module {
         const role = 'sauron';
 
         this.registerMenus(
-            new Menu('Marketing Tools', [
-                new Menu('Sauron', [
-                    new Menu('Rules', 'Sauron.Rule.List')
-                ]).setRole(role)
-            ], 'icon-bell')
+            <Menu label="Marketing Tools" icon="fa-bell">
+                <Menu label="Sauron" role={role}>
+                    <Menu label="Rules" route="Sauron.Rule.List"/>
+                </Menu>
+            </Menu>
         );
 
         this.registerRoutes(
