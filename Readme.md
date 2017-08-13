@@ -1,4 +1,4 @@
-#Sauron
+# Sauron
 Sauron is a user tracker which will assign appropriate score for a defined set of actions. Each user will have a level based on the provided score.
 
 A simple use case: assign a score of “1” for every time a user opens his dashboard. Assign a score of, say, “5” for each article a user publishes. Each time these actions are performed Sauron will track it and update the user’s score.
