@@ -5,7 +5,7 @@ class Eye extends Webiny.Ui.Component {
     glance(rule) {
         let user = Webiny.Model.get('User');
         if (_.get(user, 'id', false)) {
-            const api = new Webiny.Api.Endpoint('/services/sauron/eye');
+            const api = new Webiny.Api.Endpoint('/services/insight/eye');
             return api.post('glance', {'rule': rule});
         }
     }

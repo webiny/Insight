@@ -1,5 +1,5 @@
 <?php
-namespace Apps\Sauron\Php\Entities;
+namespace Apps\Insight\Php\Entities;
 
 use Apps\Webiny\Php\DevTools\Entity\AbstractEntity;
 use Apps\Webiny\Php\DevTools\WebinyTrait;
@@ -17,14 +17,14 @@ use Webiny\Component\Mongo\Index\SingleIndex;
  * @property integer $activities
  * @property integer $lastActivity
  *
- * @package Apps\Sauron\Php\Entities
+ * @package Apps\Insight\Php\Entities
  *
  */
 class ScoreCard extends AbstractEntity
 {
     use WebinyTrait;
 
-    protected static $entityCollection = 'SauronScoreCard';
+    protected static $entityCollection = 'InsightScoreCard';
 
     public function __construct()
     {
@@ -37,7 +37,7 @@ class ScoreCard extends AbstractEntity
         $user = '\Apps\Webiny\Php\Entities\User';
         $this->attr('user')->many2one()->setEntity($user);
 
-        $rule = '\Apps\Sauron\Php\Entities\Rule';
+        $rule = '\Apps\Insight\Php\Entities\Rule';
         $this->attr('rule')->many2one()->setEntity($rule);
 
         $this->attr('score')->integer()->setToArrayDefault();
@@ -46,7 +46,7 @@ class ScoreCard extends AbstractEntity
         
         $this->api('GET', 'user/{user}', function(User $user){
             $scoreCard = $this->find(['user'=>$user->id], ['-score']);
-            return $scoreCard->toArray('user.firstName,user.lastName,user.sauron,rule.name,rule.description,score,activities,lastActivity');
+            return $scoreCard->toArray('user.firstName,user.lastName,user.insight,rule.name,rule.description,score,activities,lastActivity');
         });
     }
 

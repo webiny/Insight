@@ -8,19 +8,19 @@ class ScoreCard extends Webiny.App.Module {
     init() {
         this.name = 'Rules';
         const Menu = Webiny.Ui.Menu;
-        const role = 'sauron';
+        const role = 'insight';
 
         this.registerMenus(
             <Menu label="Marketing Tools" icon="fa-bell">
-                <Menu label="Sauron" role={role}>
-                    <Menu label="Score Card" route="Sauron.ScoreCard.List"/>
+                <Menu label="Insight" role={role}>
+                    <Menu label="Score Card" route="Insight.ScoreCard.List"/>
                 </Menu>
             </Menu>
         );
 
         this.registerRoutes(
-            new Webiny.Route('Sauron.ScoreCard.List', '/sauron/score-card', List, 'Sauron - Score Card').setRole(role),
-            new Webiny.Route('Sauron.ScoreCard.Details', '/sauron/score-card/:id', Details, 'Sauron - Score Card').setRole(role)
+            new Webiny.Route('Insight.ScoreCard.List', '/insight/score-card', List, 'Insight - Score Card').setRole(role),
+            new Webiny.Route('Insight.ScoreCard.Details', '/insight/score-card/:id', Details, 'Insight - Score Card').setRole(role)
         );
     }
 }

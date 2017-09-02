@@ -1,17 +1,17 @@
 [
     {
-        "name": "Manage Sauron",
-        "slug": "sauron-manage-all",
-        "description": "Allows user to perform all actions on Sauron app",
+        "name": "Manage Insight",
+        "slug": "insight-manage-all",
+        "description": "Allows user to perform all actions on the Insight app",
         "permissions": {
             "entities": {
-                "Apps\\Sauron\\Php\\Entities\\Rule": {
+                "Apps\\Insight\\Php\\Entities\\Rule": {
                     "crudCreate": true,
                     "crudRead": true,
                     "crudUpdate": true,
                     "crudDelete": true
                 },
-                "Apps\\Sauron\\Php\\Entities\\ScoreCard": {
+                "Apps\\Insight\\Php\\Entities\\ScoreCard": {
                     "crudCreate": true,
                     "crudRead": true,
                     "crudUpdate": true,

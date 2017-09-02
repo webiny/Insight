@@ -9,7 +9,7 @@ List.defaultProps = {
 
     renderer() {
         const listProps = {
-            api: '/entities/sauron/rules',
+            api: '/entities/insight/rules',
             fields: '*',
             searchFields: 'name',
             connectToRouter: true
@@ -25,7 +25,7 @@ List.defaultProps = {
                 {(Ui) => (
                     <Ui.View.List>
                         <Ui.View.Header title="Rules">
-                            <Ui.Link type="primary" align="right" route="Sauron.Rule.Create">
+                            <Ui.Link type="primary" align="right" route="Insight.Rule.Create">
                                 <Ui.Icon icon="icon-plus-circled"/>
                                 Create new Rule
                             </Ui.Link>
@@ -43,7 +43,7 @@ List.defaultProps = {
                                 </Ui.List.FormFilters>
                                 <Ui.List.Table>
                                     <Ui.List.Table.Row>
-                                        <Ui.List.Table.Field name="name" align="left" label="Name" sort="name" route="Sauron.Rule.Edit">
+                                        <Ui.List.Table.Field name="name" align="left" label="Name" sort="name" route="Insight.Rule.Edit">
                                             {data => (
                                                 <span>
                                                     <strong>{data.name}</strong><br/>{data.description}
@@ -54,7 +54,7 @@ List.defaultProps = {
                                         <Ui.List.Table.Field name="score" label="Score" sort="score" align="center"/>
                                         <Ui.List.Table.TimeAgoField name="createdOn" align="left" label="Created" sort="createdOn"/>
                                         <Ui.List.Table.Actions>
-                                            <Ui.List.Table.EditAction route="Sauron.Rule.Edit"/>
+                                            <Ui.List.Table.EditAction route="Insight.Rule.Edit"/>
                                             <Ui.List.Table.DeleteAction/>
                                         </Ui.List.Table.Actions>
                                     </Ui.List.Table.Row>

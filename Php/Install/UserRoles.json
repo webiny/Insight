@@ -1,10 +1,10 @@
 [
     {
-        "name": "Sauron",
-        "slug": "sauron",
-        "description": "This role allows user to manage Sauron rules and view score cards.",
+        "name": "Insight",
+        "slug": "insight",
+        "description": "This role allows user to manage Insight rules and view score cards.",
         "permissions": [
-            "sauron-manage-all"
+            "insight-manage-all"
         ]
     }
 ]

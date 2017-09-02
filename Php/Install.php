@@ -1,5 +1,5 @@
 <?php
-namespace Apps\Sauron\Php;
+namespace Apps\Insight\Php;
 
 use Apps\Webiny\Php\PackageManager\App;
 

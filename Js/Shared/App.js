@@ -1,13 +1,13 @@
 import Webiny from 'webiny';
 import Plugins from './Modules/Plugins';
 
-class SauronShared extends Webiny.App {
+class InsightShared extends Webiny.App {
     constructor() {
-        super('Sauron.Shared');
+        super('Insight.Shared');
         this.modules = [
             new Plugins(this)
         ];
     }
 }
 
-Webiny.registerApp(new SauronShared());
+Webiny.registerApp(new InsightShared());
