@@ -1,9 +1,9 @@
 <?php
 
-namespace Apps\Sauron\Php\Lib;
+namespace Apps\Insight\Php\Lib;
 
-use Apps\Sauron\Php\Entities\Rule;
-use Apps\Sauron\Php\Entities\ScoreCard;
+use Apps\Insight\Php\Entities\Rule;
+use Apps\Insight\Php\Entities\ScoreCard;
 use Apps\Webiny\Php\DevTools\WebinyTrait;
 
 class Eye
@@ -11,11 +11,11 @@ class Eye
     use WebinyTrait;
 
     /**
-     * Glance triggers a Sauron action for the given rule.
+     * Glance triggers an Insight action for the given rule.
      *
      * @param string $ruleSlug Rule slug.
      *
-     * @return bool True if glance registered the score, false if user or Sauron rule was not found.
+     * @return bool True if glance registered the score, false if user or Insight rule was not found.
      */
     public function glance($ruleSlug)
     {
@@ -48,12 +48,12 @@ class Eye
         $scoreCard->save();
 
         // update user score
-        if ($user->getAttribute('sauron')) {
-            $user->sauron->score += $rule->score;
-            $user->sauron->level = $scoreCard->getLevel($user->sauron->score);
+        if ($user->getAttribute('insight')) {
+            $user->insight->score += $rule->score;
+            $user->insight->level = $scoreCard->getLevel($user->insight->score);
         } else {
-            $user->sauron->score = $rule->score;
-            $user->sauron->level = $scoreCard->getLevel($rule->score);
+            $user->insight->score = $rule->score;
+            $user->insight->level = $scoreCard->getLevel($rule->score);
         }
         $user->save();
 

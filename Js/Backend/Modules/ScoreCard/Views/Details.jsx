@@ -8,7 +8,7 @@ class Details extends Webiny.Ui.View {
 Details.defaultProps = {
     renderer() {
         const listProps = {
-            api: '/entities/sauron/score-cards',
+            api: '/entities/insight/score-cards',
             url: '/user/' + Webiny.Router.getParams('id')
         };
 
@@ -26,10 +26,10 @@ Details.defaultProps = {
                                     <Ui.View.Header
                                         title={'Score Card/' + data[0].user.firstName + ' ' + data[0].user.lastName}
                                         description="User score card details">
-                                        <Ui.Link type="default" align="right" route="Sauron.ScoreCard.List">Back</Ui.Link>
+                                        <Ui.Link type="default" align="right" route="Insight.ScoreCard.List">Back</Ui.Link>
                                     </Ui.View.Header>
                                     <Ui.View.Body>
-                                        <h2>Level: {data[0].user.sauron.level} / Total score: {data[0].user.sauron.score}</h2>
+                                        <h2>Level: {data[0].user.insight.level} / Total score: {data[0].user.insight.score}</h2>
                                         <Ui.List.Table data={data}>
                                             <Ui.List.Table.Row>
                                                 <Ui.List.Table.Field name="score" label="Score" sort="score" align="center">

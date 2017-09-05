@@ -2,18 +2,18 @@ import Webiny from 'webiny';
 import Rules from './Modules/Rules';
 import ScoreCard from './Modules/ScoreCard';
 
-class SauronBackend extends Webiny.App {
+class InsightBackend extends Webiny.App {
     constructor() {
-        super('Sauron.Backend');
+        super('Insight.Backend');
         this.modules = [
             new Rules(this),
             new ScoreCard(this)
         ];
 
         this.beforeRender(() => {
-            return Webiny.includeApp('Sauron.Shared').then(app => app.run());
+            return Webiny.includeApp('Insight.Shared').then(app => app.run());
         });
     }
 }
 
-Webiny.registerApp(new SauronBackend());
+Webiny.registerApp(new InsightBackend());

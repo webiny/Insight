@@ -1,5 +1,5 @@
 <?php
-namespace Apps\Sauron\Php\Entities;
+namespace Apps\Insight\Php\Entities;
 
 use Apps\Webiny\Php\DevTools\Entity\AbstractEntity;
 use Apps\Webiny\Php\DevTools\WebinyTrait;
@@ -13,14 +13,14 @@ use Webiny\Component\Mongo\Index\SingleIndex;
  * @property string  $slug
  * @property integer $score
  *
- * @package Apps\Sauron\Php\Entities
+ * @package Apps\Insight\Php\Entities
  *
  */
 class Rule extends AbstractEntity
 {
     use WebinyTrait;
 
-    protected static $entityCollection = 'SauronRule';
+    protected static $entityCollection = 'InsightRule';
 
     public function __construct()
     {

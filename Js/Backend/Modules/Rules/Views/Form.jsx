@@ -8,11 +8,11 @@ class Form extends Webiny.Ui.View {
 Form.defaultProps = {
     renderer() {
         const formProps = {
-            api: '/entities/sauron/rules',
+            api: '/entities/insight/rules',
             fields: '*',
             connectToRouter: true,
-            onSubmitSuccess: 'Sauron.Rule.List',
-            onCancel: 'Sauron.Rule.List'
+            onSubmitSuccess: 'Insight.Rule.List',
+            onCancel: 'Insight.Rule.List'
         };
 
         return (
