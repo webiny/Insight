@@ -3,7 +3,7 @@
 namespace Apps\Sauron\Php;
 
 use Apps\Webiny\Php\Entities\User;
-use Apps\Webiny\Php\PackageManager\App;
+use Apps\Webiny\Php\AppManager\App;
 
 class Bootstrap extends \Apps\Webiny\Php\DevTools\LifeCycle\Bootstrap
 {
