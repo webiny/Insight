@@ -4,7 +4,7 @@ namespace Apps\Insight\Php\Lib;
 
 use Apps\Insight\Php\Entities\Rule;
 use Apps\Insight\Php\Entities\ScoreCard;
-use Apps\Webiny\Php\DevTools\WebinyTrait;
+use Apps\Webiny\Php\Lib\WebinyTrait;
 
 class Eye
 {

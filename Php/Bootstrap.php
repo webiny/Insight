@@ -3,9 +3,9 @@
 namespace Apps\Insight\Php;
 
 use Apps\Webiny\Php\Entities\User;
-use Apps\Webiny\Php\AppManager\App;
+use Apps\Webiny\Php\Lib\Apps\App;
 
-class Bootstrap extends \Apps\Webiny\Php\DevTools\LifeCycle\Bootstrap
+class Bootstrap extends \Apps\Webiny\Php\Lib\LifeCycle\Bootstrap
 {
     public function run(App $app)
     {

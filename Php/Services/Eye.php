@@ -2,7 +2,7 @@
 
 namespace Apps\Insight\Php\Services;
 
-use Apps\Webiny\Php\DevTools\Services\AbstractService;
+use Apps\Webiny\Php\Lib\Services\AbstractService;
 
 class Eye extends AbstractService
 {
