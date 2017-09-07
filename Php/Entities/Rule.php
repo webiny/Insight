@@ -1,8 +1,9 @@
 <?php
+
 namespace Apps\Insight\Php\Entities;
 
 use Apps\Webiny\Php\Lib\Entity\AbstractEntity;
-use Apps\Webiny\Php\Lib\WebinyTrait;
+use Apps\Webiny\Php\Lib\Entity\Indexes\IndexContainer;
 use Webiny\Component\Mongo\Index\SingleIndex;
 
 /**
@@ -18,15 +19,11 @@ use Webiny\Component\Mongo\Index\SingleIndex;
  */
 class Rule extends AbstractEntity
 {
-    use WebinyTrait;
-
     protected static $entityCollection = 'InsightRule';
 
     public function __construct()
     {
         parent::__construct();
-
-        $this->index(new SingleIndex('slug', 'slug'));
 
         $this->attr('name')->char()->setToArrayDefault();
         $this->attr('slug')->char()->setToArrayDefault()->setValidators('unique')->setValidationMessages([
@@ -34,5 +31,11 @@ class Rule extends AbstractEntity
         ])->setToArrayDefault();
         $this->attr('score')->integer()->setToArrayDefault();
         $this->attr('description')->char()->setToArrayDefault();
+    }
+
+    protected static function entityIndexes(IndexContainer $indexes)
+    {
+        parent::entityIndexes($indexes);
+        $indexes->add(new SingleIndex('slug', 'slug'));
     }
 }

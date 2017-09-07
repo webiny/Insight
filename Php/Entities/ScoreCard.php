@@ -1,9 +1,11 @@
 <?php
+
 namespace Apps\Insight\Php\Entities;
 
+use Apps\Webiny\Php\Lib\Api\ApiContainer;
 use Apps\Webiny\Php\Lib\Entity\AbstractEntity;
-use Apps\Webiny\Php\Lib\WebinyTrait;
 use Apps\Webiny\Php\Entities\User;
+use Apps\Webiny\Php\Lib\Entity\Indexes\IndexContainer;
 use Webiny\Component\Mongo\Index\CompoundIndex;
 use Webiny\Component\Mongo\Index\SingleIndex;
 
@@ -22,17 +24,11 @@ use Webiny\Component\Mongo\Index\SingleIndex;
  */
 class ScoreCard extends AbstractEntity
 {
-    use WebinyTrait;
-
     protected static $entityCollection = 'InsightScoreCard';
 
     public function __construct()
     {
         parent::__construct();
-
-        $this->index(new SingleIndex('user', 'user'));
-        $this->index(new SingleIndex('rule', 'rule'));
-        $this->index(new CompoundIndex('user-rule', ['user', 'rule'], false, true));
 
         $user = '\Apps\Webiny\Php\Entities\User';
         $this->attr('user')->many2one()->setEntity($user);
@@ -43,12 +39,28 @@ class ScoreCard extends AbstractEntity
         $this->attr('score')->integer()->setToArrayDefault();
         $this->attr('activities')->integer()->setToArrayDefault();
         $this->attr('lastActivity')->datetime()->setToArrayDefault();
-        
-        $this->api('GET', 'user/{user}', function(User $user){
-            $scoreCard = $this->find(['user'=>$user->id], ['-score']);
+    }
+
+    protected function entityApi(ApiContainer $api)
+    {
+        parent::entityApi($api);
+
+        $api->get('user/{user}', function (User $user) {
+            $scoreCard = $this->find(['user' => $user->id], ['-score']);
+
             return $scoreCard->toArray('user.firstName,user.lastName,user.insight,rule.name,rule.description,score,activities,lastActivity');
         });
     }
+
+
+    protected static function entityIndexes(IndexContainer $indexes)
+    {
+        parent::entityIndexes($indexes);
+        $indexes->add(new SingleIndex('user', 'user'));
+        $indexes->add(new SingleIndex('rule', 'rule'));
+        $indexes->add(new CompoundIndex('user-rule', ['user', 'rule'], false, true));
+    }
+
 
     /**
      * Returns level based on the give score.
