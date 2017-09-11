@@ -2,6 +2,7 @@
     {
         "name": "Insight",
         "slug": "insight",
+        "isAdminRole": true,
         "description": "This role allows user to manage Insight rules and view score cards.",
         "permissions": [
             "insight-manage-all"
