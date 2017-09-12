@@ -29,13 +29,8 @@ class ScoreCard extends AbstractEntity
     public function __construct()
     {
         parent::__construct();
-
-        $user = '\Apps\Webiny\Php\Entities\User';
-        $this->attr('user')->many2one()->setEntity($user);
-
-        $rule = '\Apps\Insight\Php\Entities\Rule';
-        $this->attr('rule')->many2one()->setEntity($rule);
-
+        $this->attr('user')->many2one()->setEntity(User::class);
+        $this->attr('rule')->many2one()->setEntity(Rule::class);
         $this->attr('score')->integer()->setToArrayDefault();
         $this->attr('activities')->integer()->setToArrayDefault();
         $this->attr('lastActivity')->datetime()->setToArrayDefault();
