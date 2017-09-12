@@ -4,21 +4,19 @@
         "slug": "insight-manage-all",
         "description": "Allows user to perform all actions on the Insight app",
         "permissions": {
-            "entities": {
-                "Apps\\Insight\\Php\\Entities\\Rule": {
-                    "crudCreate": true,
-                    "crudRead": true,
-                    "crudUpdate": true,
-                    "crudDelete": true
-                },
-                "Apps\\Insight\\Php\\Entities\\ScoreCard": {
-                    "crudCreate": true,
-                    "crudRead": true,
-                    "crudUpdate": true,
-                    "crudDelete": true,
-                    "user/{user}": {
-                        "get": true
-                    }
+            "Insight.Entities.Rule": {
+                "c": true,
+                "r": true,
+                "u": true,
+                "d": true
+            },
+            "Insight.Entities.ScoreCard": {
+                "c": true,
+                "r": true,
+                "u": true,
+                "d": true,
+                "user/{user}": {
+                    "get": true
                 }
             }
         }
