@@ -13,12 +13,10 @@ use Webiny\Component\Mongo\Index\SingleIndex;
  * @property string  $name
  * @property string  $slug
  * @property integer $score
- *
- * @package Apps\Insight\Php\Entities
- *
  */
 class Rule extends AbstractEntity
 {
+    protected static $classId = 'Insight.Entities.Rule';
     protected static $entityCollection = 'InsightRule';
 
     public function __construct()

@@ -18,12 +18,10 @@ use Webiny\Component\Mongo\Index\SingleIndex;
  * @property integer $score
  * @property integer $activities
  * @property integer $lastActivity
- *
- * @package Apps\Insight\Php\Entities
- *
  */
 class ScoreCard extends AbstractEntity
 {
+    protected static $classId = 'Insight.Entities.ScoreCard';
     protected static $entityCollection = 'InsightScoreCard';
 
     public function __construct()

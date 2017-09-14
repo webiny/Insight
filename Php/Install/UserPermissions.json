@@ -3,22 +3,28 @@
         "name": "Manage Insight",
         "slug": "insight-manage-all",
         "description": "Allows user to perform all actions on the Insight app",
-        "permissions": {
-            "Insight.Entities.Rule": {
-                "c": true,
-                "r": true,
-                "u": true,
-                "d": true
+        "permissions": [
+            {
+                "classId": "Insight.Entities.Rule",
+                "rules": {
+                    "c": true,
+                    "r": true,
+                    "u": true,
+                    "d": true
+                }
             },
-            "Insight.Entities.ScoreCard": {
-                "c": true,
-                "r": true,
-                "u": true,
-                "d": true,
-                "user/{user}": {
-                    "get": true
+            {
+                "classId": "Insight.Entities.ScoreCard",
+                "rules": {
+                    "c": true,
+                    "r": true,
+                    "u": true,
+                    "d": true,
+                    "user/{user}": {
+                        "get": true
+                    }
                 }
             }
-        }
+        ]
     }
 ]

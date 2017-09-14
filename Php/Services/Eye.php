@@ -7,6 +7,8 @@ use Apps\Webiny\Php\Lib\Services\AbstractService;
 
 class Eye extends AbstractService
 {
+    protected static $classId = 'Insight.Services.Eye';
+
     protected function serviceApi(ApiContainer $api)
     {
         /**
