@@ -3,13 +3,12 @@
 namespace Apps\Insight\Php;
 
 use Apps\Webiny\Php\Entities\User;
-use Apps\Webiny\Php\Lib\Apps\App;
 
-class Bootstrap extends \Apps\Webiny\Php\Lib\LifeCycle\Bootstrap
+class App extends \Apps\Webiny\Php\Lib\Apps\App
 {
-    public function run(App $app)
+    public function bootstrap()
     {
-        parent::run($app);
+        parent::bootstrap();
         User::onExtend(function (User $user) {
             // add the additional attributes
             // contains `score` and `level`
