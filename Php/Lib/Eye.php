@@ -35,7 +35,6 @@ class Eye
         $scoreCard = ScoreCard::findOne(['user' => $user->id, 'rule' => $rule->id]);
         if (!$scoreCard) {
             $scoreCard = new ScoreCard();
-            $scoreCard->user = $user;
             $scoreCard->rule = $rule;
             $scoreCard->activities = 1;
             $scoreCard->lastActivity = time();

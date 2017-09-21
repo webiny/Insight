@@ -17,7 +17,7 @@ use Webiny\Component\Mongo\Index\SingleIndex;
 class Rule extends AbstractEntity
 {
     protected static $classId = 'Insight.Entities.Rule';
-    protected static $entityCollection = 'InsightRule';
+    protected static $collection = 'InsightRule';
 
     public function __construct()
     {

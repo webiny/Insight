@@ -5,6 +5,7 @@ namespace Apps\Insight\Php\Entities;
 use Apps\Webiny\Php\Lib\Api\ApiContainer;
 use Apps\Webiny\Php\Lib\Entity\AbstractEntity;
 use Apps\Webiny\Php\Entities\User;
+use Apps\Webiny\Php\Lib\Entity\Attributes\UserAttribute;
 use Apps\Webiny\Php\Lib\Entity\Indexes\IndexContainer;
 use Webiny\Component\Mongo\Index\CompoundIndex;
 use Webiny\Component\Mongo\Index\SingleIndex;
@@ -22,12 +23,12 @@ use Webiny\Component\Mongo\Index\SingleIndex;
 class ScoreCard extends AbstractEntity
 {
     protected static $classId = 'Insight.Entities.ScoreCard';
-    protected static $entityCollection = 'InsightScoreCard';
+    protected static $collection = 'InsightScoreCard';
 
     public function __construct()
     {
         parent::__construct();
-        $this->attr('user')->many2one()->setEntity(User::class);
+        $this->attr('user')->user()->setDefaultValue($this->wAuth()->getUser());
         $this->attr('rule')->many2one()->setEntity(Rule::class);
         $this->attr('score')->integer()->setToArrayDefault();
         $this->attr('activities')->integer()->setToArrayDefault();
