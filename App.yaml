@@ -1,8 +1,8 @@
 Name: Insight
 Version: 0.1.0
-Link: http://www.webiny.com/store/webiny/Insight/
-Description:
-
-AuthorName: Webiny LTD
-AuthorLink: http://www.webiny.com
-AuthorEmail: info@webiny.com
+Link: https://github.com/Webiny/Insight
+Description: Track page views
+Author:
+    Name: Webiny LTD
+    Email: info@webiny.com
+    Link: https://www.webiny.com
