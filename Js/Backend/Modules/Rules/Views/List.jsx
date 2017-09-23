@@ -33,10 +33,10 @@ List.defaultProps = {
                         <Ui.View.Body>
                             <Ui.List {...listProps}>
                                 <Ui.List.FormFilters>
-                                    {(applyFilters, resetFilters) => (
+                                    {({apply, reset}) => (
                                         <Ui.Grid.Row>
                                             <Ui.Grid.Col all={12}>
-                                                <Ui.Input {...searchProps} onEnter={applyFilters()}/>
+                                                <Ui.Input {...searchProps} onEnter={apply()}/>
                                             </Ui.Grid.Col>
                                         </Ui.Grid.Row>
                                     )}
@@ -44,7 +44,7 @@ List.defaultProps = {
                                 <Ui.List.Table>
                                     <Ui.List.Table.Row>
                                         <Ui.List.Table.Field name="name" align="left" label="Name" sort="name" route="Insight.Rule.Edit">
-                                            {data => (
+                                            {({data}) => (
                                                 <span>
                                                     <strong>{data.name}</strong><br/>{data.description}
                                                 </span>

@@ -19,7 +19,7 @@ Form.defaultProps = {
             <Webiny.Ui.LazyLoad modules={['Form', 'View', 'Grid', 'Section', 'Input', 'Textarea', 'Button']}>
                 {(Ui) => (
                     <Ui.Form {...formProps}>
-                        {(model, container) => (
+                        {({form}) => (
                             <Ui.View.Form>
                                 <Ui.View.Header title="Rule"/>
                                 <Ui.View.Body>
@@ -34,8 +34,8 @@ Form.defaultProps = {
                                     </Ui.Grid.Row>
                                 </Ui.View.Body>
                                 <Ui.View.Footer>
-                                    <Ui.Button type="default" onClick={container.cancel} label="Go back"/>
-                                    <Ui.Button type="primary" onClick={container.submit} label="Save rule" align="right"/>
+                                    <Ui.Button type="default" onClick={form.cancel} label="Go back"/>
+                                    <Ui.Button type="primary" onClick={form.submit} label="Save rule" align="right"/>
                                 </Ui.View.Footer>
                             </Ui.View.Form>
                         )}

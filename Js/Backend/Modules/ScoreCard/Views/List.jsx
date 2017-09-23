@@ -27,11 +27,11 @@ List.defaultProps = {
                         <Ui.View.Body>
                             <Ui.List {...listProps}>
                                 <Ui.List.FormFilters>
-                                    {(applyFilters) => (
+                                    {({apply}) => (
                                         <Ui.Input
                                             name="_searchQuery"
                                             placeholder="Search by name or email"
-                                            onEnter={applyFilters()}/>
+                                            onEnter={apply()}/>
                                     )}
                                 </Ui.List.FormFilters>
                                 <Ui.List.Table>
@@ -42,7 +42,7 @@ List.defaultProps = {
                                             label="First Name"
                                             sort="firstName"
                                             route="Insight.ScoreCard.Details">
-                                            {data => (
+                                            {({data}) => (
                                                 <span>
                                                     <strong>{data.firstName} {data.lastName}</strong>
                                                     <br/>Level: {_.get(data.insight, 'level', 1)}
@@ -51,7 +51,6 @@ List.defaultProps = {
                                         </Ui.List.Table.Field>
                                         <Ui.List.Table.Field name="email" sort="email" label="Email"/>
                                         <Ui.List.Table.Field name="insight.score" sort="score" label="Score" align="center"/>
-
                                         <Ui.List.Table.Actions>
                                             <Ui.List.Table.EditAction route="Insight.ScoreCard.Details"/>
                                             <Ui.List.Table.DeleteAction/>

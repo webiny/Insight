@@ -16,8 +16,8 @@ Details.defaultProps = {
             <Webiny.Ui.LazyLoad modules={['Data', 'View', 'Link', 'List', 'Filters']}>
                 {(Ui) => (
                     <Ui.Data {...listProps}>
-                        {data => {
-                            if(!data.length) {
+                        {({data}) => {
+                            if (!data.length) {
                                 return <Ui.List.Table.Empty/>
                             }
 
@@ -33,24 +33,25 @@ Details.defaultProps = {
                                         <Ui.List.Table data={data}>
                                             <Ui.List.Table.Row>
                                                 <Ui.List.Table.Field name="score" label="Score" sort="score" align="center">
-                                                    {data => (
+                                                    {({data}) => (
                                                         <h1>{data.score}</h1>
                                                     )}
                                                 </Ui.List.Table.Field>
                                                 <Ui.List.Table.Field name="activities" align="left" label="Activities" sort="activities">
-                                                    {data => (
+                                                    {({data}) => (
                                                         <div>
                                                             <strong>Activities</strong>: {data.activities}<br/>
-                                                            <strong>Last activity on</strong>: <Ui.Filters.DateTime value={data.lastActivity}/>
+                                                            <strong>Last activity on</strong>: <Ui.Filters.DateTime
+                                                            value={data.lastActivity}/>
                                                         </div>
 
                                                     )}
                                                 </Ui.List.Table.Field>
                                                 <Ui.List.Table.Field name="rule.name" align="left" label="Rule" sort="rule.name">
-                                                    {data => (
+                                                    {({data}) => (
                                                         <span>
-                                                    <strong>{data.rule.name}</strong><br/>{data.rule.description}
-                                                </span>
+                                                            <strong>{data.rule.name}</strong><br/>{data.rule.description}
+                                                        </span>
                                                     )}
                                                 </Ui.List.Table.Field>
 
