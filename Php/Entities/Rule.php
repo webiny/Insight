@@ -4,6 +4,7 @@ namespace Apps\Insight\Php\Entities;
 
 use Apps\Webiny\Php\Lib\Entity\AbstractEntity;
 use Apps\Webiny\Php\Lib\Entity\Indexes\IndexContainer;
+use Webiny\Component\Mongo\Index\CompoundIndex;
 use Webiny\Component\Mongo\Index\SingleIndex;
 
 /**
@@ -34,6 +35,6 @@ class Rule extends AbstractEntity
     protected static function entityIndexes(IndexContainer $indexes)
     {
         parent::entityIndexes($indexes);
-        $indexes->add(new SingleIndex('slug', 'slug'));
+        $indexes->add(new CompoundIndex('slug', ['slug', 'deletedOn'], false, true));
     }
 }
