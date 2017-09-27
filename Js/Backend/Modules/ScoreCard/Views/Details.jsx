@@ -1,6 +1,9 @@
 import React from 'react';
 import Webiny from 'webiny';
 
+/**
+ * @i18n.namespace Insight.Backend.ScoreCard.Details
+ */
 class Details extends Webiny.Ui.View {
 
 }
@@ -32,12 +35,12 @@ Details.defaultProps = {
                                         <h2>Level: {data[0].user.insight.level} / Total score: {data[0].user.insight.score}</h2>
                                         <Ui.List.Table data={data}>
                                             <Ui.List.Table.Row>
-                                                <Ui.List.Table.Field name="score" label="Score" sort="score" align="center">
+                                                <Ui.List.Table.Field name="score" label={this.i18n('Score')} sort="score" align="center">
                                                     {({data}) => (
                                                         <h1>{data.score}</h1>
                                                     )}
                                                 </Ui.List.Table.Field>
-                                                <Ui.List.Table.Field name="activities" align="left" label="Activities" sort="activities">
+                                                <Ui.List.Table.Field name="activities" align="left" label={this.i18n('Activities')} sort="activities">
                                                     {({data}) => (
                                                         <div>
                                                             <strong>Activities</strong>: {data.activities}<br/>
@@ -47,7 +50,7 @@ Details.defaultProps = {
 
                                                     )}
                                                 </Ui.List.Table.Field>
-                                                <Ui.List.Table.Field name="rule.name" align="left" label="Rule" sort="rule.name">
+                                                <Ui.List.Table.Field name="rule.name" align="left" label={this.i18n('Rule')} sort="rule.name">
                                                     {({data}) => (
                                                         <span>
                                                             <strong>{data.rule.name}</strong><br/>{data.rule.description}

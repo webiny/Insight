@@ -2,6 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 import Webiny from 'webiny';
 
+/**
+ * @i18n.namespace Insight.Backend.ScoreCard.List
+ */
 class List extends Webiny.Ui.View {
 
 }
@@ -22,7 +25,7 @@ List.defaultProps = {
                 {(Ui) => (
                     <Ui.View.List>
                         <Ui.View.Header
-                            title="Score Card"
+                            title={this.i18n('Score Card')}
                             description="Overview of user ranks based on their Insight score."/>
                         <Ui.View.Body>
                             <Ui.List {...listProps}>
@@ -30,7 +33,7 @@ List.defaultProps = {
                                     {({apply}) => (
                                         <Ui.Input
                                             name="_searchQuery"
-                                            placeholder="Search by name or email"
+                                            placeholder={this.i18n('Search by name or email')}
                                             onEnter={apply()}/>
                                     )}
                                 </Ui.List.FormFilters>
@@ -39,7 +42,7 @@ List.defaultProps = {
                                         <Ui.List.Table.GravatarField name="gravatar"/>
                                         <Ui.List.Table.Field
                                             name="firstName"
-                                            label="First Name"
+                                            label={this.i18n('First Name')}
                                             sort="firstName"
                                             route="Insight.ScoreCard.Details">
                                             {({data}) => (
@@ -49,8 +52,8 @@ List.defaultProps = {
                                                 </span>
                                             )}
                                         </Ui.List.Table.Field>
-                                        <Ui.List.Table.Field name="email" sort="email" label="Email"/>
-                                        <Ui.List.Table.Field name="insight.score" sort="score" label="Score" align="center"/>
+                                        <Ui.List.Table.Field name="email" sort="email" label={this.i18n('Email')}/>
+                                        <Ui.List.Table.Field name="insight.score" sort="score" label={this.i18n('Score')} align="center"/>
                                         <Ui.List.Table.Actions>
                                             <Ui.List.Table.EditAction route="Insight.ScoreCard.Details"/>
                                             <Ui.List.Table.DeleteAction/>
