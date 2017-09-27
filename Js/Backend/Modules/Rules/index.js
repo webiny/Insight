@@ -14,9 +14,9 @@ class Rules extends Webiny.App.Module {
         const role = 'insight';
 
         this.registerMenus(
-            <Menu label={this.i18n('Marketing Tools')} icon="fa-bell">
-                <Menu label={this.i18n('Insight')} role={role}>
-                    <Menu label={this.i18n('Rules')} route="Insight.Rule.List"/>
+            <Menu label={Webiny.I18n('Marketing Tools')} icon="fa-bell">
+                <Menu label={Webiny.I18n('Insight')} role={role}>
+                    <Menu label={Webiny.I18n('Rules')} route="Insight.Rule.List"/>
                 </Menu>
             </Menu>
         );
