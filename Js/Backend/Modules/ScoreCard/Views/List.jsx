@@ -26,7 +26,7 @@ List.defaultProps = {
                     <Ui.View.List>
                         <Ui.View.Header
                             title={this.i18n('Score Card')}
-                            description="Overview of user ranks based on their Insight score."/>
+                            description={this.i18n('Overview of user ranks based on their Insight score.')}/>
                         <Ui.View.Body>
                             <Ui.List {...listProps}>
                                 <Ui.List.FormFilters>
@@ -48,7 +48,7 @@ List.defaultProps = {
                                             {({data}) => (
                                                 <span>
                                                     <strong>{data.firstName} {data.lastName}</strong>
-                                                    <br/>Level: {_.get(data.insight, 'level', 1)}
+                                                    <br/>{this.i18n('Level: {level}', {level: _.get(data.insight, 'level', 1)})}
                                                 </span>
                                             )}
                                         </Ui.List.Table.Field>

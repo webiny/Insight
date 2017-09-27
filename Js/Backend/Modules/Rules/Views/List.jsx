@@ -5,11 +5,9 @@ import Webiny from 'webiny';
  * @i18n.namespace Insight.Backend.Rules.List
  */
 class List extends Webiny.Ui.View {
-
 }
 
 List.defaultProps = {
-
     renderer() {
         const listProps = {
             api: '/entities/insight/rules',
@@ -19,7 +17,7 @@ List.defaultProps = {
         };
 
         const searchProps = {
-            placeholder: 'Search by name',
+            placeholder: this.i18n('Search by name'),
             name: '_searchQuery'
         };
 
@@ -30,7 +28,7 @@ List.defaultProps = {
                         <Ui.View.Header title={this.i18n('Rules')}>
                             <Ui.Link type="primary" align="right" route="Insight.Rule.Create">
                                 <Ui.Icon icon="icon-plus-circled"/>
-                                Create new Rule
+                                {this.i18n('Create new Rule')}
                             </Ui.Link>
                         </Ui.View.Header>
                         <Ui.View.Body>
