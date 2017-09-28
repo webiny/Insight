@@ -5,7 +5,6 @@ namespace Apps\Insight\Php\Entities;
 use Apps\Webiny\Php\Lib\Entity\AbstractEntity;
 use Apps\Webiny\Php\Lib\Entity\Indexes\IndexContainer;
 use Webiny\Component\Mongo\Index\CompoundIndex;
-use Webiny\Component\Mongo\Index\SingleIndex;
 
 /**
  * Class Rule
@@ -18,6 +17,7 @@ use Webiny\Component\Mongo\Index\SingleIndex;
 class Rule extends AbstractEntity
 {
     protected static $classId = 'Insight.Entities.Rule';
+    protected static $i18nNamespace = 'Insight.Entities.Rule';
     protected static $collection = 'InsightRule';
 
     public function __construct()
