@@ -3,9 +3,6 @@ import Webiny from 'webiny';
 import List from './Views/List';
 import Form from './Views/Form';
 
-/**
- * @i18n.namespace Insight.Backend.Rules
- */
 class Rules extends Webiny.App.Module {
 
     init() {
@@ -14,9 +11,9 @@ class Rules extends Webiny.App.Module {
         const role = 'insight';
 
         this.registerMenus(
-            <Menu label={Webiny.I18n('Marketing Tools')} icon="fa-bell">
-                <Menu label={Webiny.I18n('Insight')} role={role}>
-                    <Menu label={Webiny.I18n('Rules')} route="Insight.Rule.List"/>
+            <Menu label="Marketing Tools" icon="fa-bell">
+                <Menu label="Insight" role={role}>
+                    <Menu label="Rules" route="Insight.Rule.List"/>
                 </Menu>
             </Menu>
         );

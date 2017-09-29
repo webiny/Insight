@@ -3,9 +3,6 @@ import Webiny from 'webiny';
 import List from './Views/List';
 import Details from './Views/Details';
 
-/**
- * @i18n.namespace Insight.Backend.ScoreCard
- */
 class ScoreCard extends Webiny.App.Module {
 
     init() {
@@ -14,9 +11,9 @@ class ScoreCard extends Webiny.App.Module {
         const role = 'insight';
 
         this.registerMenus(
-            <Menu label={Webiny.I18n('Marketing Tools')} icon="fa-bell">
-                <Menu label={Webiny.I18n('Insight')} role={role}>
-                    <Menu label={Webiny.I18n('Score Card')} route="Insight.ScoreCard.List"/>
+            <Menu label="Marketing Tools" icon="fa-bell">
+                <Menu label="Insight" role={role}>
+                    <Menu label="Score Card" route="Insight.ScoreCard.List"/>
                 </Menu>
             </Menu>
         );
